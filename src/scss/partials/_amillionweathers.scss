@@ -1,7 +1,7 @@
 div.a-million-weathers {
   &.logo {
-      background-image: url('https://static1.squarespace.com/static/58502567bebafba120baaa92/t/58ac2a8eb8a79be91016a3da/1481799052173/amads-twitter.png');
-      background-size: cover;
+    background-image: url('https://static1.squarespace.com/static/58502567bebafba120baaa92/t/58ac2a8eb8a79be91016a3da/1481799052173/amads-twitter.png');
+    background-size: cover;
   }
   text-align: center;
   -webkit-touch-callout: none;
@@ -44,8 +44,8 @@ div.a-million-weathers {
 
     &:before {
       border-color: $cyan;
-      left: -$gutter;
-      right: -$gutter;
+      left: -$gutter * 0.5;
+      right: -$gutter * 0.5;
       top: 0;
       bottom: 0;
     }
@@ -54,20 +54,18 @@ div.a-million-weathers {
       border-color: $magenta;
       left: 0;
       right: 0;
-      top: -$gutter;
-      bottom: -$gutter;
+      top: -$gutter * 0.5;
+      bottom: -$gutter * 0.5;
     }
 
     &:hover:before, &:hover:after {
       @include borderFade;
     }
   }
-  @media (max-width: 700px) {
-    h2 {
-      @include backgroundColor;
-      &:before, &:after {
-        @include borderFade;
-      }
+  h2 {
+    @include backgroundColor;
+    &:before, &:after {
+      @include borderFade;
     }
   }
 }
