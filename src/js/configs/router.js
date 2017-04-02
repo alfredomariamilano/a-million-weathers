@@ -9,7 +9,7 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
   $stateProvider
   .state('weather', {
     url: '/',
-    templateUrl: '/js/views/weather/weather.html'
+    templateUrl: '/js/views/weather.html'
   });
 
 
