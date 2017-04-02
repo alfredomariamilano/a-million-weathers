@@ -1,0 +1,26 @@
+{
+  "name": "amillionads-code-test",
+  "description": "A simple weather app.",
+  "main": "index.js",
+  "authors": [
+    "alfredomariamilano <alfmarmil@gmail.com>"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "Amazing"
+  ],
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.5.8",
+    "angular-ui-router": "~0.3.1",
+    "angular-resource": "~1.5.7"
+  }
+}

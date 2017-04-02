@@ -1,0 +1,42 @@
+body {
+  background-color: $white;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  text-align: center;
+}
+
+input.search {
+  text-align: center;
+  min-width: 50%;
+  max-width: 90%;
+  font-size: 25px;
+  margin-top: $gutter;
+  margin-bottom: $gutter;
+  text-transform: capitalize;
+}
+
+div.col.a-million-weathers h4 {
+  cursor: pointer;
+}
+
+.container {
+  padding-bottom: $gutter * 5;
+  img {
+    width: 200px;
+    height: auto;
+  }
+}
+
+footer.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: $gutter;
+  background-image: url('https://static1.squarespace.com/static/58502567bebafba120baaa92/t/58ac2a8eb8a79be91016a3da/1481799052173/amads-twitter.png');
+  background-size: cover;
+  p {
+    margin: 0;
+  }
+}

@@ -1,0 +1,78 @@
+div.a-million-weathers {
+  &.logo {
+      background-image: url('https://static1.squarespace.com/static/58502567bebafba120baaa92/t/58ac2a8eb8a79be91016a3da/1481799052173/amads-twitter.png');
+      background-size: cover;
+  }
+  text-align: center;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+
+  h2, h4 {
+    display: inline-block;
+    position: relative;
+    margin-top: $gutter * 2;
+    padding: $gutter * 2;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+    -ms-transition: all 1s;
+    transition: all 1s;
+
+    span {
+      font-weight: 600;
+    }
+
+    &:hover {
+      background: $transparent-yellow;
+      border-radius: 100%;
+      -webkit-text-stroke: 1px rgba(black, .2);
+      text-shadow: -5px -5px rgba($cyan, .4), 5px 5px rgba($magenta, .4);
+    }
+
+    &:after, &:before {
+      content: '';
+      position: absolute;
+      display: block;
+      border: 1px dashed;
+      -webkit-transition: all 1s;
+      -moz-transition: all 1s;
+      -o-transition: all 1s;
+      -ms-transition: all 1s;
+      transition: all 1s;
+    }
+
+    &:before {
+      border-color: $cyan;
+      left: -$gutter;
+      right: -$gutter;
+      top: 0;
+      bottom: 0;
+    }
+
+    &:after {
+      border-color: $magenta;
+      left: 0;
+      right: 0;
+      top: -$gutter;
+      bottom: -$gutter;
+    }
+
+    &:hover:before {
+      border-radius: 100%;
+      border-color: transparent;
+      left: 0;
+      right: 0;
+    }
+
+    &:hover:after {
+      border-radius: 100%;
+      top: 0;
+      bottom: 0;
+      border-color: transparent;
+    }
+  }
+}
