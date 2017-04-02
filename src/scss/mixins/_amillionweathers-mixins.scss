@@ -1,0 +1,15 @@
+@mixin backgroundColor {
+  background: $transparent-yellow;
+  border-radius: 100%;
+  -webkit-text-stroke: 1px rgba(black, .2);
+  text-shadow: -5px -5px rgba($cyan, .4), 5px 5px rgba($magenta, .4);
+}
+
+@mixin borderFade {
+  border-radius: 100%;
+  border-color: transparent;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}

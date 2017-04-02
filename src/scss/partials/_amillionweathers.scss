@@ -27,10 +27,7 @@ div.a-million-weathers {
     }
 
     &:hover {
-      background: $transparent-yellow;
-      border-radius: 100%;
-      -webkit-text-stroke: 1px rgba(black, .2);
-      text-shadow: -5px -5px rgba($cyan, .4), 5px 5px rgba($magenta, .4);
+      @include backgroundColor;
     }
 
     &:after, &:before {
@@ -61,18 +58,16 @@ div.a-million-weathers {
       bottom: -$gutter;
     }
 
-    &:hover:before {
-      border-radius: 100%;
-      border-color: transparent;
-      left: 0;
-      right: 0;
+    &:hover:before, &:hover:after {
+      @include borderFade;
     }
-
-    &:hover:after {
-      border-radius: 100%;
-      top: 0;
-      bottom: 0;
-      border-color: transparent;
+  }
+  @media (max-width: 700px) {
+    h2 {
+      @include backgroundColor;
+      &:before, &:after {
+        @include borderFade;
+      }
     }
   }
 }
