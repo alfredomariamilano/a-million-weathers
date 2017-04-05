@@ -19,8 +19,7 @@ function modalCtrl() {
   }
   // close modal if clicked outside content area
   document.querySelector('.modal-inner').addEventListener('click', function() {
-    console.log(vm.modal.scrollTop);
-    vm.content.scrollTop = 0
+    vm.content.scrollTop = 0;
     vm.modal.classList.toggle('modal-open');
   });
   // prevent modal inner from closing parent when clicked

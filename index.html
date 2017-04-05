@@ -8,13 +8,12 @@
   <script src="/js/app.js" charset="utf-8"></script>
   <base href="/" />
   <title>A Million Weathers</title>
-  <base href="/" />
 </head>
 <body ng-controller="mainCtrl as main">
-  <div class="a-million-weathers logo">
-    <h2>a<span>million</span>weathers</h2>
+  <div class="logo">
+    <h2>a<span>million</span>weathers<img src="./images/rainbow.png" alt=""></h2>
   </div>
-  <input class="search" type="text" name="" value="" placeholder="Type a city...">
+  <input ng-show="main.start" focus-on="focus" class="search" type="text" name="" value="" placeholder="Type a city...">
   <main ui-view></main>
   <footer class="footer"><p>Made with &#10084; by Alfredo Maria Milano</p></footer>
 </body>

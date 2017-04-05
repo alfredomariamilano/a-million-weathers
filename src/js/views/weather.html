@@ -1,12 +1,14 @@
 <div class="container">
-  <img ng-if="!main.places" ng-src="http://i571.photobucket.com/albums/ss155/samhil/rainbow.png" alt="">
-  <h3 ng-if="!main.places">Type in any of the million cities in the world to discover their current weather and their forecast!</h3>
+  <img ng-if="!main.start" src="./images/rainbow.png" alt="">
+  <h3 ng-if="!main.start">Type in any of the million cities in the world to discover their current weather and their forecast!</h3>
+  <button ng-if="!main.start" ng-click="main.starting()" class="button">Start searching</button>
   <h3 ng-if="main.notFound">No results found! Try again!</h3>
   <div class="grid grid-flex grid-justify grid-1of2 grid-align-top small-1of2 medium-1of2 large-1of3 XL-1of4" ng-if="!main.notFound">
-    <div class="a-million-weathers col" ng-repeat="weather in main.places track by $index">
+    <div class="col" ng-repeat="weather in main.places track by $index">
       <div class="u-full-width u-full-height">
-        <h4 ng-click="main.openModal(weather)">{{ weather.location.city }}</h4>
-        <h5>{{ weather.location.region }}, {{ weather.location.country }}</h5>
+        <h4 ng-click="main.openModal(weather)"><u>{{ weather.location.city }}</u></h4>
+        <h6>{{ weather.location.region }}, {{ weather.location.country }}</h6>
+        <img ng-src="{{ main.retrieveImage(weather.item.description) }}" alt="">
       </div>
     </div>
   </div>
@@ -18,9 +20,9 @@
     <div class="modal-close-icon">
       <a href="javascript:void(0)" class="close-modal"><i class="fa fa-times" aria-hidden="true"></i></a>
     </div>
-    <div class="modal-content-inner a-million-weathers" ng-if="main.modalContent">
+    <div class="modal-content-inner" ng-if="main.modalContent">
       <h2>{{ main.modalContent.location.city }}</h2>
-      <h3>{{ main.modalContent.location.region }}, {{ main.modalContent.location.country }}</h3>
+      <h4>{{ main.modalContent.location.region }}, {{ main.modalContent.location.country }}</h4>
       <h5>Current weather:</h5>
       <h6>{{ main.modalContent.item.condition.text }}, {{ main.modalContent.item.condition.temp }} C</h6>
       <img ng-src="{{ main.retrieveImage(main.modalContent.item.description) }}" alt="">

@@ -6,6 +6,10 @@ body {
   text-align: center;
 }
 
+main {
+  padding-top: $gutter * 2;
+}
+
 input.search {
   text-align: center;
   min-width: 50%;
@@ -14,10 +18,24 @@ input.search {
   margin-top: $gutter;
   margin-bottom: $gutter;
   text-transform: capitalize;
+  &:focus {
+    border: 1px solid $cyan;
+  }
 }
 
-div.col.a-million-weathers h4 {
-  cursor: pointer;
+div.col {
+  padding-bottom: $gutter;
+  h4 {
+    cursor: pointer;
+    margin: 0;
+    u {
+      text-decoration: none;
+      border-bottom: 1px solid $black;
+    }
+  }
+  h6 {
+    margin: 0;
+  }
 }
 
 .container {

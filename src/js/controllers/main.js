@@ -2,14 +2,16 @@ angular
 .module('weather')
 .controller('mainCtrl', mainCtrl);
 
-mainCtrl.$inject = ['urlBuilder', 'Weather'];
-function mainCtrl(urlBuilder, Weather) {
+mainCtrl.$inject = ['urlBuilder', 'Weather','$scope'];
+function mainCtrl(urlBuilder, Weather, $scope) {
   const vm = this;
 
   vm.getWeather     = getWeather;
   vm.retrieveImage  = retrieveImage;
   vm.openModal      = openModal;
   vm.searchSettings = searchSettings;
+  vm.starting       = starting;
+  vm.start          = false;
 
   vm.searchSettings();
 
@@ -37,18 +39,26 @@ function mainCtrl(urlBuilder, Weather) {
     });
   }
 
+  function starting() {
+    vm.start = true;
+    setTimeout(function() {
+      $scope.$broadcast('focus');
+    }, 500);
+  }
+
   function searchSettings() {
     const search = document.querySelector('.search');
     let timeout;
 
     search.addEventListener('keyup', function() {
+      if (search.value.length === 0) return;
       if (timeout) {
         clearTimeout(timeout);
       }
 
       timeout = setTimeout(function() {
         vm.getWeather(search.value);
-      }, 500);
+      }, 50);
     });
   }
 
@@ -58,5 +68,4 @@ function mainCtrl(urlBuilder, Weather) {
     modal.scrollTop = 0;
     modal.classList.toggle('modal-open');
   }
-
 }
