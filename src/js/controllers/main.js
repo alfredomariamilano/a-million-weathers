@@ -43,7 +43,7 @@ function mainCtrl(urlBuilder, Weather, $scope) {
     vm.start = true;
     setTimeout(function() {
       $scope.$broadcast('focus');
-    }, 500);
+    }, 50);
   }
 
   function searchSettings() {
@@ -58,7 +58,7 @@ function mainCtrl(urlBuilder, Weather, $scope) {
 
       timeout = setTimeout(function() {
         vm.getWeather(search.value);
-      }, 50);
+      }, 500);
     });
   }
 
